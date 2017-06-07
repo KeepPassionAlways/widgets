@@ -1,0 +1,23 @@
+<!-- 
+    作者：guotq
+    描述：九宫格解锁
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<title>九宫格解锁</title>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+
+	<script src="unLock.js"></script>
+
+	<script>
+		GridUnLockTools.getUnLock('#myCanvas', '', function(result) {
+			console.log(result);
+		});
+	</script>
+</body>
+</html>
