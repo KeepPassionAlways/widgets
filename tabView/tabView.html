@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tabView组件</title>
+	<style type="text/css">
+		.l {
+			float: left;
+		}
+
+		.r {
+			float: right;
+		}
+
+		.mr5 {
+			margin-right: 5px;
+		}
+
+		div.cur {
+			color: red;
+		}
+
+		[data-role~="head"] {
+			height: 200px;
+		}
+
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="tab-view">
+		<div data-role="head">
+			<div data-role="tab" data-target="one" class="l mr5">one</div>
+			<div data-role="tab" data-target="two" class="l mr5">two</div>
+			<div data-role="tab" data-target="three" class="l mr5">three</div>
+		</div>
+
+		<div data-role="body">
+			<div data-role="content" data-id="one" class="l mr5">oneContent</div>
+			<div data-role="content" data-id="two" class="l mr5 hidden">twoContent</div>
+			<div data-role="content" data-id="three" class="l mr5 hidden">threeContent</div>
+		</div>
+	</div>
+
+	<script src="../mui.js"></script>
+	<script src="tabView.js"></script>
+	<script type="text/javascript">
+		new TabView({
+			dom: '#tab-view',
+			activeCls: 'cur',
+			onClickCallback: function() {
+
+			}
+		});
+	</script>
+</body>
+</html>
