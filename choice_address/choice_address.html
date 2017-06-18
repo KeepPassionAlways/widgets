@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title>选择城市</title>
+		<title></title>
+		<link rel="stylesheet" href="../mui.min.css" />
+		<link rel="stylesheet" href="choice_address.css" />
+	</head>
+
+	<body>
+		<!-- 地区 -->
+		<div class="container" id="container">
+			<!-- 省份 -->
+			<div class="province-area">
+				<ul class="province-list" id="province-list">
+				</ul>
+			</div>
+			
+			<!-- 县区 -->
+			<div class="city-area">
+				<ul class="city-list cur" id="city-list">
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 结果 -->
+		<div id="result"></div>
+		
+		<button type="button" class="mui-btn mui-btn-blue btn">显示</button>
+		
+		<script type="x-templ-mustache" id="templ-list">
+			{{#items}}
+			<li class="list-item" data-areacode="{{value}}" data-index="{{index}}">{{text}}</li>
+			{{/items}}
+		</script>
+		
+		<script src="../mui.min.js"></script>
+		<script src="city.data-3.js"></script>
+		<script src="../mustache.min.js"></script>
+		<script src="choice_address.js"></script>
+	</body>
+
+</html>

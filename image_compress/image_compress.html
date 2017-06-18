@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>图片压缩</title>
+	<style>
+		.hidden {
+			display: none;
+		}
+		
+		#output {
+			width: 140px;
+			color: #f00;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 质量 -->
+		<h5>请选择质量：</h5>
+		0<input type="range" min="0" max="10" value="0" id="range"/>10
+		<br />
+		<div id="output">0</div>
+		
+		<!-- 上传图片 -->
+		<h5>请选择要上传的图片：</h5>
+		<input type="file" id="upload-pic" accept="image/*" />
+		
+		<!-- 未压缩区域 -->
+		<div class="no-compress">
+			<h5>未压缩的：</h5>
+			<img src="" alt="" id="preview" />
+		</div>
+
+		<!-- 压缩区域 -->
+		<div class="compress">
+			<h5>压缩过的：</h5>
+			<canvas id="canvas" class="hidden"></canvas>
+			<img src="" id="source" alt="" />
+		</div>
+	</div>
+
+	<script src="image_compress.js"></script>
+</body>
+</html>
