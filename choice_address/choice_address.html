@@ -8,39 +8,59 @@
 		<title></title>
 		<link rel="stylesheet" href="../mui.min.css" />
 		<link rel="stylesheet" href="choice_address.css" />
+		<style>
+			body {
+				background-color: #fff;
+			}
+			
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			#btn {
+				position: fixed;
+				bottom: 0;
+			}
+		</style>
 	</head>
 
 	<body>
 		<!-- 地区 -->
-		<div class="container" id="container">
+		<div class="em-addrselect" id="em-addrselect">
+
 			<!-- 省份 -->
-			<div class="province-area">
-				<ul class="province-list" id="province-list">
+			<div class="em-province-area">
+				<ul class="em-province-list" data-type="province">
 				</ul>
 			</div>
-			
+
 			<!-- 县区 -->
-			<div class="city-area">
-				<ul class="city-list cur" id="city-list">
+			<div class="em-city-area">
+				<ul class="em-city-list cur" data-type="city">
 				</ul>
 			</div>
+
 		</div>
-		
-		<!-- 结果 -->
-		<div id="result"></div>
-		
-		<button type="button" class="mui-btn mui-btn-blue btn">显示</button>
-		
-		<script type="x-templ-mustache" id="templ-list">
-			{{#items}}
-			<li class="list-item" data-areacode="{{value}}" data-index="{{index}}">{{text}}</li>
-			{{/items}}
-		</script>
-		
+
+		<button type="button" class="mui-btn mui-btn-blue" id="btn">显示</button>
+
 		<script src="../mui.min.js"></script>
 		<script src="city.data-3.js"></script>
 		<script src="../mustache.min.js"></script>
 		<script src="choice_address.js"></script>
+
+		<script type="text/javascript">
+			AddrSelect.init({
+				container: '#em-addrselect',
+				showBtn: '#btn',
+				onClick: function(result) {
+					alert(JSON.stringify(result));
+				}
+			});
+		</script>
 	</body>
 
 </html>

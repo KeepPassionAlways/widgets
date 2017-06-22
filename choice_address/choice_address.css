@@ -1,62 +1,64 @@
-body {
-	background-color: #fff;
-}
+/**
+ * 作者: 郭天琦
+ * 创建时间: 2017/06/19
+ * 版本: [1.0, 2017/06/19 ]
+ * 版权: 江苏国泰新点软件有限公司
+ * 描述:  地区选人
+ */
 
-ul,
-li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-.l {
-	float: left;
-}
-
-.r {
-	float: right;
-}
-
-.clearfix {
-	overflow: auto;
-}
-
-.container {
-	position: relative;
-	height: 370px;
+.em-addrselect {
 	display: none;
-	z-index: 10;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 370px;
+	z-index: 99;
 	background-color: #fff;
+	animation: conMove .5s 1;
 }
 
-.province-list,
-.city-list {
+@keyframes conMove {
+	from {
+		opacity: .1;
+	}
+	
+	to {
+		opacity: 1;
+	}
+}
+
+#em-mask {
+	animation: conMove 1s 1;
+}
+
+.em-province-list,
+.em-city-list {
 	height: 370px;
 	overflow-y: scroll;
 }
 
-.province-area,
-.city-area {
+.em-province-area,
+.em-city-area {
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	border-bottom: 1px solid #d9d9d9;
 }
 
-.province-area {
+.em-province-area {
 	left: 0;
 	width: 110px;
 	text-align: center;
 	background-color: #fafafa;
 }
 
-.city-area {
+.em-city-area {
 	left: 110px;
 	right: 0;
 	text-align: left;
 }
 
-.list-item {
+.em-list-item {
 	height: 44px;
 	line-height: 44px;
 	color: #666;
@@ -65,12 +67,12 @@ li {
 	border-bottom: 1px solid #d9d9d9;
 }
 
-.city-list > li {
+.em-city-list li {
 	padding-left: 35px;
 }
 
-.city-list.cur > li:first-child:before,
-.city-list > li.cur:before {
+.em-city-list.cur li:first-child:before,
+.em-city-list li.cur:before {
 	font-family: Muiicons;
     font-size: 18px;
     font-weight: 400;
@@ -87,22 +89,11 @@ li {
     margin-right: 6px;
 }
 
-.city-list.cur > li:first-child {
+.em-city-list.cur li:first-child {
 	color: #0062cc;	
 }
 
-.list-item.cur {
+.em-list-item.cur {
 	background-color: #fff;
 	color: #0062cc;
-}
-
-.btn {
-	position: absolute;
-	top: 0;
-	z-index: 1;
-}
-
-#result {
-	position: absolute;
-	bottom: 20%;
 }
