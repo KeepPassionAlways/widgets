@@ -1,59 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>tabView组件</title>
-	<style type="text/css">
-		.l {
-			float: left;
-		}
 
-		.r {
-			float: right;
-		}
-
-		.mr5 {
-			margin-right: 5px;
-		}
-
-		div.cur {
-			color: red;
-		}
-
-		[data-role~="head"] {
-			height: 200px;
-		}
-
-		.hidden {
-			display: none;
-		}
-	</style>
-</head>
-<body>
-	<div id="tab-view">
-		<div data-role="head">
-			<div data-role="tab" data-target="one" class="l mr5">one</div>
-			<div data-role="tab" data-target="two" class="l mr5">two</div>
-			<div data-role="tab" data-target="three" class="l mr5">three</div>
-		</div>
-
-		<div data-role="body">
-			<div data-role="content" data-id="one" class="l mr5">oneContent</div>
-			<div data-role="content" data-id="two" class="l mr5 hidden">twoContent</div>
-			<div data-role="content" data-id="three" class="l mr5 hidden">threeContent</div>
-		</div>
-	</div>
-
-	<script src="../mui.js"></script>
-	<script src="tabView.js"></script>
-	<script type="text/javascript">
-		new TabView({
-			dom: '#tab-view',
-			activeCls: 'cur',
-			onClickCallback: function() {
-
+	<head>
+		<meta charset="UTF-8">
+		<title>tabView组件</title>
+		<link rel="stylesheet" href="../mui.min.css" />
+		<style type="text/css">
+			.title {
+				width: 33.333333%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
 			}
-		});
-	</script>
-</body>
+			
+			.title.cur {
+				color: #f00;
+				border-bottom: 1px solid #f00;
+			}
+			
+			.processbar {
+				width: 33.333333%;
+				height: 1px;
+				background-color: #f00;
+			}
+			
+			.em-tabview-head {
+				position: relative;
+			}
+			
+			.processbar {
+				position: absolute;
+				bottom: 0;
+			}
+			
+			#main {
+				overflow: hidden;
+			}
+			
+			.em-tabview-body {
+				display: flex;
+				width: 300%;
+				height: 100%;
+				overflow: hidden;
+				pointer-events: none;
+				-webkit-transform: translate3d(0, 0, 0);
+				backface-visibility: hidden;
+				position: relative;
+			}
+			
+			.em-tabview-body ul {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" id="main">
+			<div class="mui-clearfix em-tabview-head" data-role="head">
+				<div class="wh50 mui-pull-left title" data-target="title1">标题1</div>
+				<div class="wh50 mui-pull-left title" data-target="title2">标题2</div>
+				<div class="wh50 mui-pull-left title" data-target="title3">标题3</div>
+			</div>
+
+			<div data-role="body" class="em-tabview-body">
+				<ul class="mui-table-view" data-id="title1">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title1
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title1
+						</a>
+					</li>
+				</ul>
+
+				<ul class="mui-table-view" data-id="title2">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title2
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title2
+						</a>
+					</li>
+				</ul>
+
+				<ul class="mui-table-view" data-id="title3">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title3
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							title3
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="../mui.min.js"></script>
+		<script src="touchslider.js"></script>
+		<script src="tabView.js"></script>
+		<script type="text/javascript">
+			new TabView({
+				container: '#main',
+				activeCls: 'cur',
+				isSwipe: true,
+				itemClick: function(e) {
+
+				}
+			});
+		</script>
+	</body>
+
 </html>
