@@ -1,115 +1,110 @@
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 
 	<head>
 		<meta charset="UTF-8">
 		<title>tabView组件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="../mui.min.css" />
-		<style type="text/css">
-			.title {
-				width: 33.333333%;
-				height: 40px;
-				line-height: 40px;
-				text-align: center;
-			}
-			
-			.title.cur {
-				color: #f00;
-				border-bottom: 1px solid #f00;
-			}
-			
-			.processbar {
-				width: 33.333333%;
-				height: 1px;
-				background-color: #f00;
-			}
-			
-			.em-tabview-head {
-				position: relative;
-			}
-			
-			.processbar {
-				position: absolute;
-				bottom: 0;
-			}
-			
-			#main {
-				overflow: hidden;
-			}
-			
-			.em-tabview-body {
-				display: flex;
-				width: 300%;
-				height: 100%;
-				overflow: hidden;
-				pointer-events: none;
-				-webkit-transform: translate3d(0, 0, 0);
-				backface-visibility: hidden;
-				position: relative;
-			}
-			
-			.em-tabview-body ul {
-				width: 100%;
-			}
-		</style>
+		<link rel="stylesheet" href="./tabview.css">
 	</head>
 
 	<body>
-		<div class="mui-content" id="main">
-			<div class="mui-clearfix em-tabview-head" data-role="head">
-				<div class="wh50 mui-pull-left title" data-target="title1">标题1</div>
-				<div class="wh50 mui-pull-left title" data-target="title2">标题2</div>
-				<div class="wh50 mui-pull-left title" data-target="title3">标题3</div>
-			</div>
+		<header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">tabView实例</h1>
+        </header>
 
-			<div data-role="body" class="em-tabview-body">
-				<ul class="mui-table-view" data-id="title1">
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title1
-						</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title1
-						</a>
-					</li>
-				</ul>
+        <div class="mui-content em-tabview" id="em-tabview">
+            <div class="clearfix em-tabview-head" data-role="head">
+                <div class="em-tabview-title" data-target="title1">标题1</div>
+                <div class="em-tabview-title" data-target="title2">标题2</div>
+                <div class="em-tabview-title" data-target="title3">标题3</div>
+            </div>
 
-				<ul class="mui-table-view" data-id="title2">
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title2
-						</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title2
-						</a>
-					</li>
-				</ul>
+            <div data-role="body" class="em-tabview-body">
+                <ul class="mui-table-view" data-id="title1">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title1
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title1
+                        </a>
+                    </li>
 
-				<ul class="mui-table-view" data-id="title3">
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title3
-						</a>
-					</li>
-					<li class="mui-table-view-cell">
-						<a class="mui-navigate-right">
-							title3
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title1
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title1
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="mui-table-view" data-id="title2">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title2
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title2
+                        </a>
+                    </li>
+
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title2
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title2
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="mui-table-view" data-id="title3">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title3
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title3
+                        </a>
+                    </li>
+
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title3
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            title3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
 		<script src="../mui.min.js"></script>
-		<script src="touchslider.js"></script>
-		<script src="tabView.js"></script>
+		<script src="./tabView.js"></script>
 		<script type="text/javascript">
 			new TabView({
-				container: '#main',
+				container: '#em-tabview',
 				activeCls: 'cur',
 				isSwipe: true,
 				itemClick: function(e) {
